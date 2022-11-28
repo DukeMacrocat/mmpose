@@ -15,6 +15,13 @@
         <i>TRY IT OUT</i>
       </a>
     </sup>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <b>MMPose 1.0 Open Beta</b>
+    <sup>
+      <a href="https://mmpose.readthedocs.io/en/1.x/overview.html">
+        <i>JOIN</i>
+      </a>
+    </sup>
   </div>
   <div>&nbsp;</div>
 
@@ -26,11 +33,11 @@
 [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/open-mmlab/mmpose.svg)](https://github.com/open-mmlab/mmpose/issues)
 [![Percentage of issues still open](https://isitmaintained.com/badge/open/open-mmlab/mmpose.svg)](https://github.com/open-mmlab/mmpose/issues)
 
-[📘Documentation](https://mmpose.readthedocs.io/en/v0.26.0/) |
-[🛠️Installation](https://mmpose.readthedocs.io/en/v0.26.0/install.html) |
-[👀Model Zoo](https://mmpose.readthedocs.io/en/v0.26.0/modelzoo.html) |
-[📜Papers](https://mmpose.readthedocs.io/en/v0.26.0/papers/algorithms.html) |
-[🆕Update News](https://mmpose.readthedocs.io/en/v0.26.0/changelog.html) |
+[📘Documentation](https://mmpose.readthedocs.io/en/v0.29.0/) |
+[🛠️Installation](https://mmpose.readthedocs.io/en/v0.29.0/install.html) |
+[👀Model Zoo](https://mmpose.readthedocs.io/en/v0.29.0/modelzoo.html) |
+[📜Papers](https://mmpose.readthedocs.io/en/v0.29.0/papers/algorithms.html) |
+[🆕Update News](https://mmpose.readthedocs.io/en/v0.29.0/changelog.html) |
 [🤔Reporting Issues](https://github.com/open-mmlab/mmpose/issues/new/choose)
 
 </div>
@@ -78,14 +85,11 @@ https://user-images.githubusercontent.com/15977946/124654387-0fd3c500-ded1-11eb-
 
 ## What's New
 
-- 2022-05-05: MMPose [v0.26.0](https://github.com/open-mmlab/mmpose/releases/tag/v0.26.0) is released. Major updates include:
-  - Support [RLE (Residual Log-likelihood Estimation)](https://arxiv.org/abs/2107.11291), ICCV'2021
-  - Support [Swin Transformer](https://arxiv.org/abs/2103.14030), ICCV'2021
-  - Support [PVT](https://arxiv.org/abs/2102.12122), ICCV'2021 and [PVTv2](https://arxiv.org/abs/2106.13797), CVMJ'2022
-  - Optimize the inference speed and CPU usage
-- 2022-04: MMPose is available on [Gitee](https://gitee.com/open-mmlab/mmpose)
+- 2022-10-14: MMPose [v0.29.0](https://github.com/open-mmlab/mmpose/releases/tag/v0.29.0) is released. Major updates include:
+  - Support [DEKR](https://arxiv.org/abs/2104.02300) (CVPR'2021). See the [model page](/configs/body/2d_kpt_sview_rgb_img/dekr/coco/hrnet_coco.md)
+  - Support [CID](https://openaccess.thecvf.com/content/CVPR2022/html/Wang_Contextual_Instance_Decoupling_for_Robust_Multi-Person_Pose_Estimation_CVPR_2022_paper.html) (CVPR'2022). See the [model page](/configs/body/2d_kpt_sview_rgb_img/cid/coco/hrnet_coco.md)
+- 2022-09-01: **MMPose v1.0.0** beta has been released \[ [Code](https://github.com/open-mmlab/mmpose/tree/1.x) | [Docs](https://mmpose.readthedocs.io/en/1.x/) \]. Welcome to try it and your feedback will be greatly appreciated!
 - 2022-02-28: MMPose model deployment is supported by [MMDeploy](https://github.com/open-mmlab/mmdeploy) v0.3.0
-- 2022-02-11: [MMPose Webcam API](https://github.com/open-mmlab/mmpose/tree/master/tools/webcam) is released with documents and tutorials
   MMPose Webcam API is a simple yet powerful tool to develop interactive webcam applications with MMPose features.
 - 2021-12-29: OpenMMLab Open Platform is online! Try our [pose estimation demo](https://platform.openmmlab.com/web-demo/demo/poseestimation)
 
@@ -96,8 +100,8 @@ Below are quick steps for installation.
 Please refer to [install.md](docs/en/install.md) for detailed installation guide.
 
 ```shell
-conda create -n open-mmlab python=3.8 pytorch=1.10 cudatoolkit=11.3 torchvision -c pytorch -y
-conda activate open-mmlab
+conda create -n openmmlab python=3.8 pytorch=1.10 cudatoolkit=11.3 torchvision -c pytorch -y
+conda activate openmmlab
 pip3 install openmim
 mim install mmcv-full
 git clone https://github.com/open-mmlab/mmpose.git
@@ -144,6 +148,8 @@ A summary can be found in the [Model Zoo](https://mmpose.readthedocs.io/en/lates
 - [x] [VoxelPose](https://mmpose.readthedocs.io/en/latest/papers/algorithms.html#voxelpose-eccv-2020) (ECCV'2020)
 - [x] [LiteHRNet](https://mmpose.readthedocs.io/en/latest/papers/backbones.html#litehrnet-cvpr-2021) (CVPR'2021)
 - [x] [ViPNAS](https://mmpose.readthedocs.io/en/latest/papers/backbones.html#vipnas-cvpr-2021) (CVPR'2021)
+- [x] [DEKR](https://mmpose.readthedocs.io/zh_CN/latest/papers/algorithms.html#dekr-cvpr-2021) (CVPR'2021)
+- [x] [CID](https://mmpose.readthedocs.io/zh_CN/latest/papers/algorithms.html#cid-cvpr-2022) (CVPR'2022)
 
 </details>
 
@@ -276,6 +282,7 @@ This project is released under the [Apache 2.0 license](LICENSE).
 - [MMClassification](https://github.com/open-mmlab/mmclassification): OpenMMLab image classification toolbox and benchmark.
 - [MMDetection](https://github.com/open-mmlab/mmdetection): OpenMMLab detection toolbox and benchmark.
 - [MMDetection3D](https://github.com/open-mmlab/mmdetection3d): OpenMMLab's next-generation platform for general 3D object detection.
+- [MMYOLO](https://github.com/open-mmlab/mmyolo): OpenMMLab YOLO series toolbox and benchmark
 - [MMRotate](https://github.com/open-mmlab/mmrotate): OpenMMLab rotated object detection toolbox and benchmark.
 - [MMSegmentation](https://github.com/open-mmlab/mmsegmentation): OpenMMLab semantic segmentation toolbox and benchmark.
 - [MMOCR](https://github.com/open-mmlab/mmocr): OpenMMLab text detection, recognition, and understanding toolbox.
